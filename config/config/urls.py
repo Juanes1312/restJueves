@@ -16,10 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from web.views import Home,VistaPlatos
-from web.views import VistaEmpleados
-from web.views import MenuPlatos
-from web.views import EditarPlatos
+from web.views import Home,VistaPlatos,VistaEmpleados,MenuPlatos,EditarPlatos,EmpleadosLista, EditarEmpleados
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,6 +25,8 @@ urlpatterns = [
     path('platos/', VistaPlatos, name="platos"),
     path('empleados/', VistaEmpleados, name="empleados"),
     path('menuPlatos/', MenuPlatos, name="menuPlatos"),
-    path('editarPlato/<int:id>', EditarPlatos, name="editarPlato")
+    path('editarPlato/<int:id>', EditarPlatos, name="editarPlato"),
+    path('empleadosLista/', EmpleadosLista, name="empleadosLista"),
+    path('editarEmpleado/<int:id>', EditarEmpleados, name="editarEmpleado"),
 
 ]
